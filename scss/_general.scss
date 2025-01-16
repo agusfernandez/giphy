@@ -1,0 +1,23 @@
+@use 'variables';
+
+
+body {
+    margin: auto;
+    background: variables.$background_light;
+    font-family: variables.$font-family;
+
+    &.dark-mode {
+        background: variables.$background_dark;
+    }
+}
+
+
+header,
+main {
+    width: 90%;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+}

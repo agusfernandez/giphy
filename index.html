@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy</title>
+    <link rel="stylesheet" href="scss/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="pre-header" id="pre-header">
+        ¡Bienvenidos/as a Guifos.com! —————— Donde los gifs están. ////// Número de visitas: <span id="visit-count">0</span>
+    </section>
+    <header>
+       
+        <nav>
+            <div class="header-menu">
+                <img src="assets/gifOF_logo.png" alt="logo light" class="logo active" id="logo-light">
+                <img src="assets/gifOF_logo_dark.png" alt="logo dark" class="logo" id="logo-dark">
+                <div class="right_menu">
+                    <div class="button-box">
+                        <button  class="creategifs button-header">Crear Gifs</button>
+                    </div>
+                    <div class="button-box">
+                        <div class="theme-box">
+                            <button id="choosetheme" class="choosetheme button-header">Elegir tema 
+                            </button>
+                            <div class="toggle-button button-header" id="toggle-icon">
+                                <div class="toggle-icon"></div>
+                            </div>
+                         </div>
+                        <ul id="theme-menu" class="theme-menu">
+                            <li data-theme="day" class="theme-option" id="light">Sailor Day</li>
+                            <li data-theme="night" class="theme-option" id="dark">Sailor Night</li>
+                        </ul>
+                    </div>
+                    <a class="link-button">Mis Guifos</a>
+                </div>
+            </div>
+           
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div id="gif-container" class="gif-container">
+
+            </div>
+            <div class="paginacion">
+                <button id="back">Atras</button>
+                <button id="next">Siguiente</button>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="components/api.js"></script>
+<script src="components/count.js"></script>
+<script src="components/themecolor.js"></script>
+
+</html>

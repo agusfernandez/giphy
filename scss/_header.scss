@@ -1,0 +1,180 @@
+@use 'variables';
+
+.pre-header {
+    background: variables.$pre-header-light;
+    color: variables.$color_white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    box-shadow: variables.$box-shadow;
+    &.dark-preheader {
+        background: variables.$pre-header-dark;
+    }
+}
+
+.header-menu  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0;
+    .right_menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+
+        .button-box {
+            border: 1px solid variables.$color_violet_dark;
+            background-color: variables.$button-background;
+            box-shadow: variables.$button-boxshadow;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+            button,
+            .button-light {
+                font-family: variables.$font-family;
+                color: variables.$background_dark;
+                background-color: variables.$button-background;
+                border: 1px solid transparent !important;
+                box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                padding: 9px 26px;
+                border: 0;
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: 18px;
+                &:hover,
+                &:active,
+                &:focus {
+                    background: variables.$color_pink_darker;
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                    border-style: dotted;
+                    border: 1px dotted !important;
+                }
+
+                &:active {
+                    color: #110038;
+                }
+            }
+
+            .button-dark { 
+
+                background: variables.$color_violet_electric;
+                border: 1px solid  variables.$color_violet_dark;
+                box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+                color: variables.$color_white;
+
+                li,
+                button {
+                    color: variables.$color_white;
+                }
+
+                &:hover {
+                    background: variables.$color_violet_electric;
+                    border: 1px solid  variables.$color_violet_dark;
+                    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+                }
+            }
+
+            .theme-box {
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    border-right: 1px solid variables.$color_black;
+                }
+
+                &:hover {
+                    background: variables.$color_pink_darker;
+                    
+                }
+    
+                .toggle-button {
+                    padding: 15px 11px;
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                    border: 1px solid transparent !important;
+
+                    .toggle-icon,
+                    .toggle-light {
+                        content: '';
+                        width: 10px;
+                        height: 6px;
+                        background-image: url('../assets/dropdown.svg');
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
+                    &:hover {
+                        border: 1px dotted !important;
+                    }
+
+                    .toggle-dark {
+                        background-image: url('../assets/forward.svg');
+                    }
+                }
+            }
+
+            .theme-menu {
+                display: none;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                margin: 0;
+                padding: 20px;
+                width: 130px;
+                background-color: variables.$color_gray;
+                box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+                &.active {
+                    display: block;
+                }
+
+                .theme-option {
+                    background: variables.$color_gray2;
+                    border: 1px solid variables.$color_gray3;
+                    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+                    padding: 8px 15px;
+
+                    &.light-btn {
+                        background-color: variables.$color_pink;
+                        border: 1px solid variables.$color_pink_light;
+                        box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+                    }
+
+                    &.dark-btn {
+                        background: variables.$color_blue_electric;
+                        border: 1px solid rgba(51,53,143,0.20);
+                        box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+                        color: variables.$color_white;
+                    }
+                }
+    
+            }
+
+        }
+
+        .choosetheme {
+            border-right: 1px solid variables.$color_violet_dark;
+        }
+
+       
+
+
+       
+    }
+}
+
+.link-dark {
+    color: variables.$color_white;
+}
+
+
+.logo {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
