@@ -13,20 +13,21 @@
     }
 
     .buscador-input {
-        padding: 15px 10px;
+        padding: 15px 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         align-content: center;
         align-items: center;
+        gap: 10px 5px;;
 
         input {
             background: variables.$color_white;
             border: 1px solid variables.$color_gray5;
             box-shadow: inset -2px -2px 0 0 variables.$color_gray, inset 2px 2px 0 0 variables.$color_black;
             height: 48px;
-            width: 85%;
+            width: 84%;
             padding: 0 16px;
             font-size: variables.$input-font__size;
             color: variables.$color_gray4;
@@ -58,12 +59,19 @@
         }
         .suggestions {
             width: 100%;
-            padding: 10px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid variables.$color_gray5;
+            //box-shadow: inset -2px -2px 0 0 variables.$color_gray4, inset 2px 2px 0 0 variables.$color_white;
+
             .suggestion {
-                padding: 10px 0;
+                width: 87%;
+                margin: 10px 0 0;
+                padding:10px 15px;
                 background: variables.$color_gray2;
                 box-shadow: inset -1px -1px 0 0 variables.$color_gray4, inset 1px 1px 0 0 variables.$color_white;
-
+                border: 1px solid variables.$color_violet_dark;
             }
         }
     }

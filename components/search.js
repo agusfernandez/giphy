@@ -40,7 +40,7 @@ inputSearch.addEventListener('input', async () => {
     const data = await response.json();
 
     data.data.forEach(suggestion => {
-      const suggestionDiv = document.createElement('div');
+      const suggestionDiv = document.createElement('span');
       suggestionDiv.classList.add('suggestion');
       suggestionDiv.textContent = suggestion.title;
       suggestionDiv.style.cursor = 'pointer';
