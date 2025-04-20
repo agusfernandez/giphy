@@ -1,8 +1,10 @@
 @use 'variables';
 
+
+
 .buscador-section {
     background: variables.$color_gray;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 variables.$color_white;
+    box-shadow: inset -2px -2px 0 0 variables.$color_gray4, inset 2px 2px 0 0 variables.$color_white;
 
     .barra-superior {
         background: variables.$pre-header-light;
@@ -12,15 +14,21 @@
 
     .buscador-input {
         padding: 15px 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
 
         input {
             background: variables.$color_white;
-            border: 1px solid #979797;
-            box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+            border: 1px solid variables.$color_gray5;
+            box-shadow: inset -2px -2px 0 0 variables.$color_gray, inset 2px 2px 0 0 variables.$color_black;
             height: 48px;
             width: 85%;
             padding: 0 16px;
-            font-size: 16px;
+            font-size: variables.$input-font__size;
             color: variables.$color_gray4;
             letter-spacing: 0;
             line-height: 22px;
@@ -29,6 +37,44 @@
             background: variables.$color_gray;
             border: 1px solid variables.$color_gray3;
             box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+            width: variables.$button-width;
+            height: variables.$button-height;
+            color: variables.$button-color;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background: url('/assets/lupa_inactive.svg');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
         }
+        .suggestions {
+            width: 100%;
+            padding: 10px;
+            .suggestion {
+                padding: 10px 0;
+                background: variables.$color_gray2;
+                box-shadow: inset -1px -1px 0 0 variables.$color_gray4, inset 1px 1px 0 0 variables.$color_white;
+
+            }
+        }
+    }
+
+    
+}
+
+.dark-mode {
+    .buscador-section {
+        background: variables.$color_gray4;
+        box-shadow: inset -2px -2px 0 0 variables.$color_gray6, inset 2px 2px 0 0 variables.$color_white;
+
     }
 }

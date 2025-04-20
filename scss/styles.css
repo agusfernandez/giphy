@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: auto;
   background: #FFF4FD;
@@ -186,6 +187,12 @@ ul {
 }
 .buscador-section .buscador-input {
   padding: 15px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 }
 .buscador-section .buscador-input input {
   background: #FFFFFF;
@@ -203,6 +210,79 @@ ul {
   background: #E6E6E6;
   border: 1px solid #808080;
   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  width: 10%;
+  height: 36px;
+  color: #B4B4B4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.buscador-section .buscador-input button::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url("/assets/lupa_inactive.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.buscador-section .buscador-input .suggestions {
+  width: 100%;
+  padding: 10px;
+}
+.buscador-section .buscador-input .suggestions .suggestion {
+  padding: 10px 0;
+  background: #F0F0F0;
+  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.dark-mode .buscador-section {
+  background: #B4B4B4;
+  box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  border: 1px solid #110038;
+}
+
+/* Botón de cerrar */
+.close-btn {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url("../assets/close.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
