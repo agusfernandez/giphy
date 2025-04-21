@@ -1,6 +1,8 @@
 const inputSearch = document.getElementById('search');
 const buttonSearch = document.getElementById('btn-search');
 const containerSearch = document.getElementById('results-search');
+const buscadorInput = document.querySelector('.buscador-input');
+
 
 // Elementos del modal
 const modal = document.getElementById('error-modal');
@@ -11,7 +13,8 @@ const closeBtn = document.querySelector('.close-btn');
 const suggestionBox = document.createElement('div');
 suggestionBox.id = 'suggestions';
 suggestionBox.classList.add('suggestions');
-inputSearch.parentNode.appendChild(suggestionBox);
+suggestionBox.style.display = 'none';
+buscadorInput.parentNode.appendChild(suggestionBox);
 
 function showModalError(message) {
   modalText.textContent = message;
@@ -33,8 +36,10 @@ window.addEventListener('click', (event) => {
 inputSearch.addEventListener('input', async () => {
   const value = inputSearch.value.trim();
   suggestionBox.innerHTML = '';
-  if (value.length === 0) return;
-
+  if (value.length === 0) {
+    suggestionBox.style.display = 'none';
+    return;
+  }
   try {
     const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${value}&limit=3`);
     const data = await response.json();
@@ -44,6 +49,12 @@ inputSearch.addEventListener('input', async () => {
       suggestionDiv.classList.add('suggestion');
       suggestionDiv.textContent = suggestion.title;
       suggestionDiv.style.cursor = 'pointer';
+
+      if (data.data.length > 0) {
+        suggestionBox.style.display = 'flex';
+      } else {
+        suggestionBox.style.display = 'none';
+      }
 
       suggestionDiv.addEventListener('click', () => {
         inputSearch.value = suggestion.title;
@@ -70,6 +81,8 @@ inputSearch.addEventListener('keydown', (e) => {
 document.addEventListener('click', (e) => {
   if (!e.target.closest('#search') && !e.target.closest('#suggestions')) {
     suggestionBox.innerHTML = '';
+    suggestionBox.style.display = 'none';
+
   }
 });
 

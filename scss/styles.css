@@ -219,31 +219,51 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 5px;
+  font-size: 16px;
 }
 .buscador-section .buscador-input button::before {
   content: "";
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   background: url("/assets/lupa_inactive.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
-.buscador-section .buscador-input .suggestions {
-  width: 100%;
-  padding: 0 20px;
+.buscador-section .buscador-input button:hover {
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  color: #110038;
+}
+.buscador-section .buscador-input button:hover::before {
+  background: url("/assets/lupa.svg");
+}
+.buscador-section .buscador-input button:active {
+  background: #E6BBE2;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+.buscador-section .suggestions {
+  padding: 10px 20px 20px;
   display: flex;
   flex-direction: column;
   border-top: 1px solid #979797;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
-.buscador-section .buscador-input .suggestions .suggestion {
+.buscador-section .suggestions .suggestion {
   width: 87%;
   margin: 10px 0 0;
   padding: 10px 15px;
   background: #F0F0F0;
   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
   border: 1px solid #110038;
+}
+.buscador-section .suggestions .suggestion:hover {
+  background: #DBDBDB;
+  border: 1px solid #808080;
+  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .dark-mode .buscador-section {

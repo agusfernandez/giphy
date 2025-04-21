@@ -46,32 +46,59 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
+            font-size: variables.$input-font__size;
             &::before {
                 content: '';
                 display: inline-block;
-                width: 10px;
-                height: 10px;
+                width: 15px;
+                height: 15px;
                 background: url('/assets/lupa_inactive.svg');
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
+               
+            }
+
+            &:hover {
+                background: variables.$button-background;
+                border: 1px solid variables.$color_violet_dark;
+                box-shadow: variables.$button-boxshadow;
+                color: variables.$color_violet_dark;
+                &::before {
+                    background: url('/assets/lupa.svg');
+                }
+            }
+
+            &:active {
+                background: variables.$color_pink_darker;
+                border: 1px solid variables.$color_violet_dark;
+                box-shadow: variables.$button-boxshadow;
             }
         }
-        .suggestions {
-            width: 100%;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            border-top: 1px solid variables.$color_gray5;
-            //box-shadow: inset -2px -2px 0 0 variables.$color_gray4, inset 2px 2px 0 0 variables.$color_white;
+      
+    }
 
-            .suggestion {
-                width: 87%;
-                margin: 10px 0 0;
-                padding:10px 15px;
-                background: variables.$color_gray2;
+    .suggestions {
+        //width: 100%;
+        padding: 10px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid variables.$color_gray5;
+        box-shadow: inset -2px -2px 0 0 variables.$color_gray4, inset 2px 2px 0 0 variables.$color_white;
+
+        .suggestion {
+            width: 87%;
+            margin: 10px 0 0;
+            padding:10px 15px;
+            background: variables.$color_gray2;
+            box-shadow: inset -1px -1px 0 0 variables.$color_gray4, inset 1px 1px 0 0 variables.$color_white;
+            border: 1px solid variables.$color_violet_dark;
+
+            &:hover {
+                background: variables.$color_grey7;
+                border: 1px solid variables.$color_gray3;
                 box-shadow: inset -1px -1px 0 0 variables.$color_gray4, inset 1px 1px 0 0 variables.$color_white;
-                border: 1px solid variables.$color_violet_dark;
+            
             }
         }
     }
