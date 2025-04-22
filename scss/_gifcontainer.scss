@@ -1,3 +1,83 @@
+@use 'variables';
+
+
+.sugerencias-random {
+   margin-bottom: 40px;
+}
+.suggestion-title-block {
+   background: variables.$color_pink2;
+   border: 1px solid variables.$color_pink_darker;
+   box-shadow: inset -2px -2px 0 0 variables.$color_white2, inset 2px 2px 0 0 variables.$color_grey8;
+   padding: 7px;
+   margin-bottom: 19px;
+}
+.suggestions-container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   .gif-header {
+      position: absolute;
+      width: 100%;
+      background: variables.$pre-header-light;
+      padding: 2px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border: 1px solid;
+      border-image: linear-gradient(to bottom right, #B4B4B4, #FFFFFF) 1;
+      .gif-tag {
+         color: variables.$color_white;
+         margin-left: 5px;
+      }
+      .gif-close {
+         content: '';
+         background-image: url('../assets/close.svg');
+         width: 20px;
+         height: 20px;
+         border: 0;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: contain;
+         cursor: pointer;
+         margin-right: 2px;
+
+      }
+   }
+   .gif-card {
+      width: 23%;
+      height: 280px;
+      position: relative;
+      background: variables.$color_gray;
+
+      img {
+         object-fit: cover;
+         width: 100%;
+         height: 100%;
+         box-shadow: variables.$header-random-top-boxshadow;
+         border: 2px solid;
+         border-image: linear-gradient(to bottom right, #B4B4B4, #FFFFFF) 1;
+      }
+   }
+
+   .gif-button {
+      background-color: variables.$button-background-random;
+      border: variables.$button-border-random;
+      box-shadow: variables.$button-box-shadow-random;
+      color: variables.$button-color-random;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 81px;
+      height: 34px;
+      font-family: variables.$font-family;
+      font-size: 14px;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 18px;
+   }
+}
+
 .gif-container {
    display: flex;
    flex-direction: row;

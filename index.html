@@ -30,7 +30,7 @@
                             </div>
                          </div>
                         <ul id="theme-menu" class="theme-menu">
-                            <li data-theme="day" class="theme-option" id="close-btn">Sailor Day</li>
+                            <li data-theme="day" class="theme-option" id="light">Sailor Day</li>
                             <li data-theme="night" class="theme-option" id="dark">Sailor Night</li>
                         </ul>
                     </div>
@@ -50,17 +50,23 @@
                 <button class="search-btn" id="btn-search">Buscar</button>
             </div>
         </section>
-        <section>
+        <section class="result-search-container">
             <div id="results-search"></div>
         </section>
         <section>
-            <div id="gif-container" class="gif-container">
-
+            <div class="sugerencias-random">
+                <div class="suggestion-title-block">Hoy te sugerimos:</div>
+                <div id="suggestions-container" class="suggestions-container"></div>
             </div>
-            <div class="paginacion">
-                <button id="back">Atras</button>
-                <button id="next">Siguiente</button>
+            <div class="tendencias-random">
+                <div class="suggestion-title-block">Tendencias:</div>
+                <div id="gif-container" class="gif-container"></div>
+                <div class="paginacion">
+                    <button id="back">Atras</button>
+                    <button id="next">Siguiente</button>
+                </div>
             </div>
+            
         </section>
         <section class="modal-sectionerror">
             <div id="error-modal" class="modal">
@@ -76,4 +82,5 @@
 <script src="components/count.js"></script>
 <script src="components/themecolor.js"></script>
 <script src="components/search.js"></script>
+<script src="components/suggestions.js"></script>
 </html>

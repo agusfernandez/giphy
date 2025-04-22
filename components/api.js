@@ -16,13 +16,12 @@ async function getApi(startPag) {
 
       data.data.forEach(gif => {
         let gifImg = gif.images.fixed_height.url;
-        console.log('GIF URL:', gifImg); // Verifica la URL en la consola
-        gifImg = encodeURI(gifImg); // Asegúrate de codificar correctamente la URL
+        gifImg = encodeURI(gifImg); 
 
         // Crear elemento <img> para mostrar el GIF
         const imgElement = document.createElement("img");
-        imgElement.src = gifImg; // Asignar URL del GIF
-        imgElement.alt = gif.title || 'GIF'; // Asignar un texto alternativo
+        imgElement.src = gifImg; 
+        imgElement.alt = gif.title || 'GIF'; 
         giftContainer.appendChild(imgElement);
       });
     } else {

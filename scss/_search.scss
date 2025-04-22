@@ -5,6 +5,7 @@
 .buscador-section {
     background: variables.$color_gray;
     box-shadow: inset -2px -2px 0 0 variables.$color_gray4, inset 2px 2px 0 0 variables.$color_white;
+    margin-bottom: 64px;
 
     .barra-superior {
         background: variables.$pre-header-light;
