@@ -247,9 +247,48 @@ ul {
 }
 
 .gif-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.gif-wrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content; /* hace que se adapte al ancho del gif */
+}
+
+/* Imagen */
+.gif-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Overlay de hashtags */
+.gif-tags {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 12px;
+  padding: 4px 6px;
+  text-align: left;
+  display: none;
+  border-radius: 0 0 6px 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gif-wrapper:hover .gif-tags {
+  display: block;
 }
 
 .buscador-section {

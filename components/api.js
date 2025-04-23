@@ -3,27 +3,59 @@ let liminPag = 30;
 
 const API_KEY = "1CXx6tt3QiStS0e4wUrgoiW9T21zhMep";
 
+// Obtener detalles de un gif individual
+const getGifDetails = async (gifId) => {
+  const detailsUrl = `https://api.giphy.com/v1/gifs/${gifId}?api_key=${API_KEY}`;
+  const response = await fetch(detailsUrl);
+  const data = await response.json();
+  return data.data;
+};
+
 async function getApi(startPag) {
   const API_URL = `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=${liminPag}&offset=${startPag}&rating=g`;
   try {
     const response = await fetch(API_URL);
     const data = await response.json();
+    console.log(data);
 
-    // Mostrar Gifs
     if (data && data.data && data.data.length > 0) {
       const giftContainer = document.getElementById("gif-container");
-      giftContainer.innerHTML = ''; 
+      giftContainer.innerHTML = '';
 
-      data.data.forEach(gif => {
-        let gifImg = gif.images.fixed_height.url;
-        gifImg = encodeURI(gifImg); 
+      for (const gif of data.data) {
+        let gifImg = gif.images.downsized_large.url;
+        gifImg = encodeURI(gifImg);
 
-        // Crear elemento <img> para mostrar el GIF
         const imgElement = document.createElement("img");
-        imgElement.src = gifImg; 
-        imgElement.alt = gif.title || 'GIF'; 
-        giftContainer.appendChild(imgElement);
-      });
+        imgElement.src = gifImg;
+        imgElement.alt = gif.title || 'GIF';
+
+        const tagOverlay = document.createElement("div");
+        tagOverlay.classList.add("gif-tags");
+
+        try {
+          const gifDetails = await getGifDetails(gif.id);
+
+          // Si existieran tags (no siempre disponibles)
+          if (gifDetails && gifDetails.title) {
+            const words = gifDetails.title.split(" ");
+            const hashtags = words.map(word => `#${word.toLowerCase()}`).join(" ");
+            tagOverlay.textContent = hashtags;
+          } else {
+            tagOverlay.textContent = "#gif";
+          }
+        } catch (err) {
+          console.error("Error obteniendo detalles del gif:", err);
+          tagOverlay.textContent = "#gif";
+        }
+
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('gif-wrapper');
+        wrapper.appendChild(imgElement);
+        wrapper.appendChild(tagOverlay);
+
+        giftContainer.appendChild(wrapper);
+      }
     } else {
       console.log('No se encontraron GIFs.');
     }
@@ -47,8 +79,6 @@ const anteriorPag = () => {
 
 window.onload = () => {
   getApi(startPag);
-
-  // Botones para la paginación
   document.getElementById('back').addEventListener('click', anteriorPag);
   document.getElementById('next').addEventListener('click', siguientePag);
 };
