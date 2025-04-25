@@ -23,7 +23,7 @@ async function getApi(startPag) {
       giftContainer.innerHTML = '';
 
       for (const gif of data.data) {
-        let gifImg = gif.images.downsized_large.url;
+        let gifImg = gif.images.fixed_height.url;
         gifImg = encodeURI(gifImg);
 
         const imgElement = document.createElement("img");
@@ -49,12 +49,18 @@ async function getApi(startPag) {
           tagOverlay.textContent = "#gif";
         }
 
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('gif-wrapper');
-        wrapper.appendChild(imgElement);
-        wrapper.appendChild(tagOverlay);
-
-        giftContainer.appendChild(wrapper);
+        imgElement.addEventListener("load", () => {
+          const wrapper = document.createElement('div');
+          wrapper.classList.add('gif-wrapper');
+      
+          if (imgElement.naturalWidth > 298) {
+            wrapper.classList.add('wide');
+          }
+      
+          wrapper.appendChild(imgElement);
+          wrapper.appendChild(tagOverlay);
+          giftContainer.appendChild(wrapper);
+        });
       }
     } else {
       console.log('No se encontraron GIFs.');
