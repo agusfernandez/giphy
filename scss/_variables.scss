@@ -8,13 +8,19 @@ $pre-header-dark: linear-gradient(270deg, #EE3EFE  0%, #2E32FB 100%);
 
 $box-shadow: 0 1px 0 0 #110038;
 
+$layout-desktop-width: 1480px;
+$layout-tablet-width:768px;
+$layout-mobile-width:767px;
+$layout-mobile-small-width: 480px;
 
 $color_white: #FFFFFF;
 $color_white2: #E6DCE4;
 $color_black: #000000;
 $color_violet_dark: #110038;
 $color_violet_electric: #EE3EFE;
+$color_violet: #4C2F99;
 $color_blue_electric: #2E32FB;
+$color_blue: #4180F6;
 $color_pink_light: #CCA6C9;
 $color_pink: #FFF4FD;
 $color_pink_darker: #E6BBE2;
@@ -35,10 +41,16 @@ $button-boxshadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 $button-width: 10%;
 $button-height: 36px;
 $button-color: $color_gray4;
+$button-search-background: $color_blue;
+$button-search-border: 1px solid $color_violet;
+$button-search-boxshadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
 
-$button-background-random: #4180F6;
+$button-background-random: $color_blue;
 $button-border-random: 1px solid #4C2F99;
 $button-box-shadow-random: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
 $button-color-random: #FFFFFF;
 
-$header-random-top-boxshadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF
+$button-background-random-dark: $color_blue_electric;
+
+$header-random-top-boxshadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+$title-border-darkmode: 1px solid $color_blue_electric;

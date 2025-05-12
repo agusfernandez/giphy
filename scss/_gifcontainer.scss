@@ -1,10 +1,12 @@
 @use 'variables';
+@import 'variables';
 
-
+/*Sugerencias*/
 .sugerencias-random {
    margin-bottom: 40px;
 }
-.suggestion-title-block {
+.suggestion-title-block,
+.titleBox {
    background: variables.$color_pink2;
    border: 1px solid variables.$color_pink_darker;
    box-shadow: inset -2px -2px 0 0 variables.$color_white2, inset 2px 2px 0 0 variables.$color_grey8;
@@ -26,9 +28,11 @@
       justify-content: space-between;
       border: 1px solid;
       border-image: linear-gradient(to bottom right, variables.$color_gray4, variables.$color_white) 1;
+      align-items: center;
       .gif-tag {
          color: variables.$color_white;
          margin-left: 5px;
+         font-size: 14px;
       }
       .gif-close {
          content: '';
@@ -41,11 +45,10 @@
          background-size: contain;
          cursor: pointer;
          margin-right: 2px;
-
+         margin-top: 1px;
       }
    }
    .gif-card {
-      width: 23%;
       height: 280px;
       position: relative;
       background: variables.$color_gray;
@@ -78,6 +81,41 @@
    }
 }
 
+@media (min-width: variables.$layout-desktop-width){
+   .suggestions-container {
+      .gif-card{
+         width: 23%;
+      }
+   }
+}
+
+@media (max-width: variables.$layout-desktop-width) and (min-width: variables.$layout-tablet-width){
+   .suggestions-container {
+      gap: 20px;
+      .gif-card{
+         width: 30%;
+      }
+   }
+}
+
+@media (max-width: variables.$layout-tablet-width) and (min-width: variables.$layout-mobile-small-width){
+   .suggestions-container {
+      gap: 20px;
+      .gif-card{
+         width: 48%;
+      }
+   }
+}
+
+@media (max-width: variables.$layout-tablet-width) {
+   .suggestions-container {
+      gap: 20px;
+      .gif-card{
+         width: 100%;
+      }
+   }
+}
+
 
 .gif-container {
    display: grid;
@@ -100,8 +138,8 @@
          width: 100%;
          height: 100%;
          box-shadow: variables.$header-random-top-boxshadow;
-         border: 2px solid;
-         border-image: linear-gradient(to bottom right, variables.$color_gray4, variables.$color_white) 1;
+         border: 2px solid transparent;
+         border-image: transparent;
       }
 
       .gif-tags {
@@ -115,20 +153,69 @@
          right: 0;
          width: 100%;
          background: variables.$pre-header-light;
-         padding: 2px 0;
-         //border: 1px solid;
-         //border-image: linear-gradient(to bottom right, #B4B4B4, #FFFFFF) 1;
+         padding: 3px 0 3px 4px;
          box-shadow: inset -2px -2px 0 0 variables.$color_gray4, inset 2px 2px 0 0 variables.$color_white;
          margin: 0 0 0 1px;
          font-size: 12px;
          color: variables.$color_white;
       }
 
-      &:hover .gif-tags {
-         display: block;
+   
+
+       &:hover {
+         .gif-tags {
+            display: block;
+
+         }
+
+         img {
+            border: 2px solid;
+            border-image: linear-gradient(to bottom right, variables.$color_gray4, variables.$color_white) 1;
+         }
        }
        
 
     }
  }
+ 
+.dark-mode {
+   .suggestion-title-block {
+      background: variables.$color_white;
+      border: variables.$title-border-darkmode;
+   }
+   .gif-card {
+      .gif-header {
+         background: variables.$pre-header-dark;
+         box-shadow: inset -2px -2px 0 0 variables.$color_gray6, inset 2px 2px 0 0 variables.$color_white;
+      }
+      .gif-button {
+         background-color: variables.$button-background-random-dark;
+         border: variables.$title-border-darkmode;
+      }
+   }
+
+   .gif-wrapper {
+      .gif-tags {
+         background: variables.$pre-header-dark;
+      }
+   }
+}
+
+.paginacion {
+   margin: 10px 0;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   button {
+      background-color: variables.$button-background-random;
+      border: variables.$button-border-random;
+      box-shadow: variables.$button-box-shadow-random;
+      color: variables.$button-color-random;
+      font-family: variables.$font-family;
+      padding: 10px;
+      cursor: pointer;
+   }
+}
  

@@ -1,7 +1,5 @@
 @use 'variables';
 
-
-
 .buscador-section {
     background: variables.$color_gray;
     box-shadow: inset -2px -2px 0 0 variables.$color_gray4, inset 2px 2px 0 0 variables.$color_white;
@@ -14,7 +12,7 @@
     }
 
     .buscador-input {
-        padding: 15px 0;
+        padding: 15px 2px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -28,7 +26,7 @@
             border: 1px solid variables.$color_gray5;
             box-shadow: inset -2px -2px 0 0 variables.$color_gray, inset 2px 2px 0 0 variables.$color_black;
             height: 48px;
-            width: 84%;
+            width: 90%;
             padding: 0 16px;
             font-size: variables.$input-font__size;
             color: variables.$color_gray4;
@@ -39,7 +37,7 @@
             background: variables.$color_gray;
             border: 1px solid variables.$color_gray3;
             box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-            width: variables.$button-width;
+            width: auto;
             height: variables.$button-height;
             color: variables.$button-color;
             display: flex;
@@ -80,7 +78,6 @@
     }
 
     .suggestions {
-        //width: 100%;
         padding: 10px 20px 20px;
         display: flex;
         flex-direction: column;
@@ -107,10 +104,47 @@
     
 }
 
+.tags-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    .tag-button {
+        background: variables.$button-search-background;
+        border: variables.$button-search-border;
+        box-shadow: variables.$button-search-boxshadow;
+        color: variables.$color_white;
+        padding: 10px 20px;
+    }
+}
+
 .dark-mode {
     .buscador-section {
         background: variables.$color_gray4;
-        box-shadow: inset -2px -2px 0 0 variables.$color_gray6, inset 2px 2px 0 0 variables.$color_white;
+        .barra-superior {
+            background: variables.$pre-header-dark;
+            box-shadow: inset -2px -2px 0 0 variables.$color_gray6, inset 2px 2px 0 0 variables.$color_white;
+        }
+        .search-btn {
+            background: variables.$color_gray4;
+            color: #8F8F8F;
+        }
 
+        .buscador-input {
+            button {
+                &::before {
+                    background: url('/assets/lupa2.svg');
+
+                }
+                &:hover{
+                    background: variables.$color_blue_electric;
+                    color: variables.$color_white;
+                    &:before {
+                        background: url('/assets/lupa_light.svg'); 
+                    }
+                }
+            }
+        }
     }
 }

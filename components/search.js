@@ -3,18 +3,24 @@ const buttonSearch = document.getElementById('btn-search');
 const containerSearch = document.getElementById('results-search');
 const buscadorInput = document.querySelector('.buscador-input');
 
-
 // Elementos del modal
 const modal = document.getElementById('error-modal');
 const modalText = document.getElementById('modal-error-text');
 const closeBtn = document.querySelector('.close-btn');
 
-// Suggestions elements
+// Sugerencias de busqueda
 const suggestionBox = document.createElement('div');
 suggestionBox.id = 'suggestions';
 suggestionBox.classList.add('suggestions');
 suggestionBox.style.display = 'none';
 buscadorInput.parentNode.appendChild(suggestionBox);
+
+
+const titleBox =document.createElement('div');
+titleBox.id='titleBox';
+titleBox.classList.add('titleBox');
+titleBox.style.display = 'none';
+containerSearch.parentNode.insertBefore(titleBox, containerSearch.parentNode.firstChild);
 
 function showModalError(message) {
   modalText.textContent = message;
@@ -36,6 +42,7 @@ window.addEventListener('click', (event) => {
 inputSearch.addEventListener('input', async () => {
   const value = inputSearch.value.trim();
   suggestionBox.innerHTML = '';
+
   if (value.length === 0) {
     suggestionBox.style.display = 'none';
     return;
@@ -57,10 +64,28 @@ inputSearch.addEventListener('input', async () => {
       }
 
       suggestionDiv.addEventListener('click', () => {
-        inputSearch.value = suggestion.title;
+        const selectedTerm = suggestion.title;
+      
+        inputSearch.value = ''; 
         suggestionBox.innerHTML = '';
+      
+        const tagBtn = document.createElement('button');
+        tagBtn.classList.add('tag-button');
+        tagBtn.textContent = `#${selectedTerm.replace(/\s+/g, '')}`;
+        
+        tagBtn.addEventListener('click', () => {
+          inputSearch.value = selectedTerm;
+          buttonSearch.click();
+        });
+      
+        const tagsBox = document.getElementById('tagsBox');
+        tagsBox.appendChild(tagBtn);
+      
+        inputSearch.value = selectedTerm;
         buttonSearch.click();
       });
+      
+      
 
       suggestionBox.appendChild(suggestionDiv);
     });
@@ -90,13 +115,16 @@ buttonSearch.addEventListener('click', () => {
   const search = inputSearch.value.trim();
   suggestionBox.innerHTML = '';
 
-  console.log(search);
+  console.log('busqueda' + search);
 
   if (search) {
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${search}&limit=5`)
       .then(response => response.json())
       .then(data => {
-        containerSearch.innerHTML = ''; // Limpia resultados previos
+        containerSearch.innerHTML = '';
+        titleBox.style.display = 'block';
+        titleBox.textContent = `Resultados de la búsqueda: ${search}`;
+
         console.log(data);
         if (data.data.length === 0) {
           showModalError('No se encontraron GIFs para esa búsqueda.');
