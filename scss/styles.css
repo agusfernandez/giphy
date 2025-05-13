@@ -33,7 +33,15 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 40px 0;
+}
+.header-menu .left-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
 }
 .header-menu .right_menu {
   display: flex;
@@ -530,6 +538,48 @@ ul {
   right: 15px;
   top: 5px;
   cursor: pointer;
+}
+
+.create-gif-info {
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  width: 55%;
+  margin: auto;
+}
+.create-gif-info .top-header-gifinfo {
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  padding: 2px 5px;
+  color: #FFFFFF;
+}
+.create-gif-info .createBox {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.create-gif-info .createBox .title-section {
+  width: 10%;
+}
+.create-gif-info .createBox .content {
+  width: 80%;
+}
+.create-gif-info .createBox h3 {
+  margin: 0;
+}
+.create-gif-info .createBox .buttons-bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.create-gif-info .createBox .buttons-bottom button {
+  background: #CCA6C9;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  padding: 9px 35px;
+}
+.create-gif-info .createBox .buttons-bottom button.start-btn {
+  background: #F7C9F3;
 }
 
 /*# sourceMappingURL=styles.css.map */

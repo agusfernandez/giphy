@@ -1,5 +1,5 @@
 let startPag = 0;
-let liminPag = 30;
+let liminPag = 35;
 
 const API_KEY = "1CXx6tt3QiStS0e4wUrgoiW9T21zhMep";
 

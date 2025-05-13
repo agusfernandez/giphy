@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giphy</title>
-    <link rel="stylesheet" href="scss/styles.css">
+    <link rel="stylesheet" href="../scss/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,37 +15,51 @@
        
         <nav>
             <div class="header-menu">
-                <img src="assets/gifOF_logo.png" alt="logo light" class="logo active" id="logo-light">
-                <img src="assets/gifOF_logo_dark.png" alt="logo dark" class="logo" id="logo-dark">
-                <div class="right_menu">
-                    <div class="button-box">
-                        <button  class="creategifs button-header">Crear Gifs</button>
-                    </div>
-                    <div class="button-box">
-                        <div class="theme-box">
-                            <button id="choosetheme" class="choosetheme button-header">Elegir tema 
-                            </button>
-                            <div class="toggle-button button-header" id="toggle-icon">
-                                <div class="toggle-icon"></div>
-                            </div>
-                         </div>
-                        <ul id="theme-menu" class="theme-menu">
-                            <li data-theme="day" class="theme-option" id="light">Sailor Day</li>
-                            <li data-theme="night" class="theme-option" id="dark">Sailor Night</li>
-                        </ul>
-                    </div>
-                    <a class="link-button">Mis Guifos</a>
+                <div class="left-menu">
+                    <a href="/" class="back-icon"><img src="../assets/arrow.svg" alt="arrow"></a>
+                    <a href="/"><img src="../assets/gifOF_logo.png" alt="logo light" class="logo active" id="logo-light"></a>
+                    <a href="/"><img src="../assets/gifOF_logo_dark.png" alt="logo dark" class="logo" id="logo-dark"></a>
                 </div>
             </div>
            
         </nav>
     </header>
     <main>
+        <section class="create-gif-info">
+            <div class="top-header-gifinfo">
+                Crear Guifos
+            </div>
+            <div class="createBox">
+                <div class="title-section">
+                    <img src="/assets/window img.png" alt="window-icon">
+                </div>
+                <div class="content">
+                    <h3>Aquí podrás crear tus propios guifos</h3>
+                    <p>Crear tu guifo es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+                    <ol>
+                         <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso).</li>
+                        <li>Capturar tu momento guifo.</li>
+                        <li>Revisar el momento.</li>
+                        <li>Listo para subir y compartir!</li>
+                    </ol>
+                    <p>
+                        ¿Quieres comenzar a crear tu guifo ahora?
+                    </p>
+                    <div class="buttons-bottom">
+                        <button class="cancel-btn">Cancelar</button>
+                        <button class="start-btn">Comenzar</button>
+                    </div>
+
+                </div>
+      
+
+            </div>
+        
+
+        </section>
       
     </main>
 </body>
-<script src="components/api.js"></script>
-<script src="components/count.js"></script>
-<script src="components/themecolor.js"></script>
-<script src="components/suggestions.js"></script>
+    <script src="../components/api.js"></script>
+    <script src="../components/count.js"></script>
 </html>
