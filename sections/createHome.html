@@ -30,12 +30,25 @@
                 Crear Guifos
             </div>
             <div class="createBox">
-            
+                <div class="title-section">
+                    <img src="/assets/window img.png" alt="window-icon">
+                </div>
                 <div class="content">
-                   <video id="video" autoplay muted></video>
-                    <button id="start">🎥 Empezar</button>
-                    <button id="stop" disabled>🛑 Capturar</button>
-                    <article id="preview"></article>
+                    <h3>Aquí podrás crear tus propios guifos</h3>
+                    <p>Crear tu guifo es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
+                    <ol>
+                         <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso).</li>
+                        <li>Capturar tu momento guifo.</li>
+                        <li>Revisar el momento.</li>
+                        <li>Listo para subir y compartir!</li>
+                    </ol>
+                    <p>
+                        ¿Quieres comenzar a crear tu guifo ahora?
+                    </p>
+                    <div class="buttons-bottom">
+                        <button class="cancel-btn">Cancelar</button>
+                        <button class="start-btn" href="/sections/createGiphy.html">Comenzar</button>
+                    </div>
 
                 </div>
       
@@ -47,7 +60,7 @@
       
     </main>
 </body>
+    <script src="../components/api.js"></script>
     <script src="../components/count.js"></script>
     <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
-    <script src="../components/create.js"></script>
 </html>

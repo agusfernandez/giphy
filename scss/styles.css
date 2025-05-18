@@ -566,6 +566,9 @@ ul {
 .create-gif-info .createBox h3 {
   margin: 0;
 }
+.create-gif-info .createBox li::marker {
+  font-weight: 700;
+}
 .create-gif-info .createBox .buttons-bottom {
   display: flex;
   flex-direction: row;
@@ -577,6 +580,8 @@ ul {
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   padding: 9px 35px;
+  font-family: "Chakra Petch", serif;
+  font-size: 1rem;
 }
 .create-gif-info .createBox .buttons-bottom button.start-btn {
   background: #F7C9F3;
