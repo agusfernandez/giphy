@@ -9,6 +9,7 @@ const preview = document.getElementById('preview');
 startBtn.addEventListener('click', async () => {
   videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
   video.srcObject = videoStream;
+  video.play();
 
   recorder = RecordRTC(videoStream, {
     type: 'gif',
