@@ -163,6 +163,10 @@ ul {
   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
   color: #FFFFFF;
 }
+.header-menu .right_menu .button-box a {
+  text-decoration: none;
+  color: #000000;
+}
 .header-menu .right_menu .choosetheme {
   border-right: 1px solid #110038;
 }
